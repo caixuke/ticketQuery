@@ -1,4 +1,4 @@
-package itkim;
+package service;
 
 import javax.mail.Session;
 import javax.mail.Transport;
