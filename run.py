@@ -8,8 +8,8 @@ def run():
     select_ticket_info.select().main()
 
 
-def Email():
-    sendEmail(u"订票小助手测试一下")
+# def Email():
+#     sendEmail(u"订票小助手测试一下")
 
 
 def PushbearConf():

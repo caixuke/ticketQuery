@@ -84,11 +84,11 @@ class getQueueCount:
                 ticket_split = sum(map(conversion_int, ticket.split(","))) if ticket.find(",") != -1 else ticket
                 countT = getQueueCountResult["data"]["countT"]
                 # if int(countT) is 0:
-                print(u"排队成功, 你排在: {1}位, 当前余票还剩余: {0} 张".format(ticket_split, countT))
+                print(u"排队成功, 你排在: {1}位, 当前余票还剩余: {0} 张，其中二等票{2}张，无座{3}张".format(ticket_split, countT, ticket.split(",")[0], ticket.split(",")[1]))
                 csf = confirmSingleForQueue(self.session, self.ifShowPassCodeTime, self.is_need_code, self.token,
                                             self.set_type, self.ticket_peoples, self.ticketInfoForPassengerForm,
                                             self.oldPassengerStr, self.passengerTicketStrList)
-                csf.sendConfirmSingleForQueue()
+                # csf.sendConfirmSingleForQueue()
             #     else:
             #         print(u"当前排队人数: {1} 当前余票还剩余:{0} 张，继续排队中".format(ticket_split, countT))
             else:

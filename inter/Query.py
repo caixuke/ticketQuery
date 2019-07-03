@@ -87,6 +87,7 @@ class query:
         查询
         :return:
         """
+        trains = []
         if self.session.is_cdn == 1:
             if self.session.cdn_list:
                 self.httpClint.cdn = self.session.cdn_list[random.randint(0, len(self.session.cdn_list) - 1)]
@@ -113,8 +114,7 @@ class query:
                         if ticket_info[11] == "Y" and ticket_info[1] == "预订":  # 筛选未在开始时间内的车次
                             for j in self._station_seat:
                                 is_ticket_pass = ticket_info[j]
-                                if is_ticket_pass != '' and is_ticket_pass != '无' and is_ticket_pass != '*' and self.check_is_need_train(
-                                        ticket_info):  # 过滤有效目标车次
+                                if is_ticket_pass != '' and is_ticket_pass != '无' and is_ticket_pass != '*':  # 过滤有效目标车次
                                     secretStr = ticket_info[0]
                                     train_no = ticket_info[2]
                                     query_from_station_name = ticket_info[6]
@@ -152,7 +152,7 @@ class query:
                                             print(u"设置乘车人数为: {}".format(self.ticke_peoples_num))
                                             is_more_ticket_num = self.ticke_peoples_num
                                         print(ticket.QUERY_C)
-                                        return {
+                                        train_number = {
                                             "secretStr": secretStr,
                                             "train_no": train_no,
                                             "stationTrainCode": stationTrainCode,
@@ -167,6 +167,25 @@ class query:
                                             "cdn": self.httpClint.cdn,
                                             "status": True,
                                         }
+                                        trains.append(train_number);
+
+                                        # return {
+                                        #     "secretStr": secretStr,
+                                        #     "train_no": train_no,
+                                        #     "stationTrainCode": stationTrainCode,
+                                        #     "train_date": station_date,
+                                        #     "query_from_station_name": query_from_station_name,
+                                        #     "query_to_station_name": query_to_station_name,
+                                        #     "seat": seat,
+                                        #     "leftTicket": leftTicket,
+                                        #     "train_location": train_location,
+                                        #     "code": ticket.SUCCESS_CODE,
+                                        #     "is_more_ticket_num": is_more_ticket_num,
+                                        #     "cdn": self.httpClint.cdn,
+                                        #     "status": True,
+                                        # }
+                    print(trains)
+                    return trains
                 else:
                     print(u"车次配置信息有误，或者返回数据异常，请检查 {}".format(station_ticket))
         return {"code": ticket.FAIL_CODE, "status": False, "cdn": self.httpClint.cdn, }
