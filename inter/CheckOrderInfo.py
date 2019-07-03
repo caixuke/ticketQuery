@@ -25,7 +25,7 @@ class checkOrderInfo:
         :return:
         """
         data = OrderedDict()
-        data['passengerTicketStr'] = self.passengerTicketStrList.rstrip("_{0}".format(self.set_type))
+        data['passengerTicketStr'] = self.passengerTicketStrList.rstrip("_{0}".format(self.set_type)) + ',02b553a6d2f75501bb63247945b6450ca6ae2bae4b67f3d5337308debd14e361c9cfb2a3b716fa18a9e6c9d2e92a2a28'
         data['oldPassengerStr'] = self.oldPassengerStr
         data['REPEAT_SUBMIT_TOKEN'] = self.token
         data['randCode'] = ""
