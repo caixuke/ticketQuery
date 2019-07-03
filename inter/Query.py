@@ -131,11 +131,11 @@ class query:
                                         ticket_num = int(ticket_info[j])
                                     except ValueError:
                                         ticket_num = "有"
-                                    print(u'车次: {0} 始发车站: {1} 终点站: {2} {3}: {4}'.format(ticket_info[3],
-                                                                                        self.from_station_h,
-                                                                                        self.to_station_h,
-                                                                                        seat_conf_2[j],
-                                                                                        ticket_num))
+                                    # print(u'车次: {0} 始发车站: {1} 终点站: {2} {3}: {4}'.format(ticket_info[3],
+                                    #                                                     self.from_station_h,
+                                    #                                                     self.to_station_h,
+                                    #                                                     seat_conf_2[j],
+                                    #                                                     ticket_num))
                                     if wrapcache.get(train_no):
                                         print(ticket.QUERY_IN_BLACK_LIST.format(train_no))
                                         continue
@@ -149,9 +149,9 @@ class query:
                                                 print(u"余票数小于乘车人数，当前设置不提交，放弃此次提交机会")
                                                 continue
                                         else:
-                                            print(u"设置乘车人数为: {}".format(self.ticke_peoples_num))
+                                            # print(u"设置乘车人数为: {}".format(self.ticke_peoples_num))
                                             is_more_ticket_num = self.ticke_peoples_num
-                                        print(ticket.QUERY_C)
+                                        # print(ticket.QUERY_C)
                                         train_number = {
                                             "secretStr": secretStr,
                                             "train_no": train_no,

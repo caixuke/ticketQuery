@@ -25,7 +25,7 @@ class checkOrderInfo:
         :return:
         """
         data = OrderedDict()
-        data['passengerTicketStr'] = self.passengerTicketStrList.rstrip("_{0}".format(self.set_type)) + ',02b553a6d2f75501bb63247945b6450ca6ae2bae4b67f3d5337308debd14e361c9cfb2a3b716fa18a9e6c9d2e92a2a28'
+        data['passengerTicketStr'] = self.passengerTicketStrList.rstrip("_{0}".format(self.set_type)) + ',c54ac2fc43211e9d6be3305d48a4f9e52b14bc43d6688818463fc0edf8b71340'
         data['oldPassengerStr'] = self.oldPassengerStr
         data['REPEAT_SUBMIT_TOKEN'] = self.token
         data['randCode'] = ""
@@ -47,7 +47,7 @@ class checkOrderInfo:
         checkOrderInfoRep = self.session.httpClint.send(CheckOrderInfoUrls, data)
         data = checkOrderInfoRep.get("data", {})
         if data and data.get("submitStatus", False):
-            print (u'车票提交通过，正在尝试排队')
+            # print (u'车票提交通过，正在尝试排队')
             ifShowPassCodeTime = int(checkOrderInfoRep["data"]["ifShowPassCodeTime"]) / float(1000)
             if "ifShowPassCode" in checkOrderInfoRep["data"] and checkOrderInfoRep["data"]["ifShowPassCode"] == "Y":
                 is_need_code = True
