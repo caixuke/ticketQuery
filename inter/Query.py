@@ -125,7 +125,7 @@ class query:
                                     start_time = ticket_info[8]
                                     arrival_time = ticket_info[9]
                                     distance_time = ticket_info[10]
-                                    print(start_time, arrival_time, distance_time)
+                                    # print(start_time, arrival_time, distance_time)
                                     seat = j
                                     try:
                                         ticket_num = int(ticket_info[j])
@@ -168,23 +168,6 @@ class query:
                                             "status": True,
                                         }
                                         trains.append(train_number);
-
-                                        # return {
-                                        #     "secretStr": secretStr,
-                                        #     "train_no": train_no,
-                                        #     "stationTrainCode": stationTrainCode,
-                                        #     "train_date": station_date,
-                                        #     "query_from_station_name": query_from_station_name,
-                                        #     "query_to_station_name": query_to_station_name,
-                                        #     "seat": seat,
-                                        #     "leftTicket": leftTicket,
-                                        #     "train_location": train_location,
-                                        #     "code": ticket.SUCCESS_CODE,
-                                        #     "is_more_ticket_num": is_more_ticket_num,
-                                        #     "cdn": self.httpClint.cdn,
-                                        #     "status": True,
-                                        # }
-                    print(trains)
                     return trains
                 else:
                     print(u"车次配置信息有误，或者返回数据异常，请检查 {}".format(station_ticket))

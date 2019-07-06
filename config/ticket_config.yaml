@@ -5,7 +5,7 @@ set:
   # - 2018-01-06
   # - 2018-01-07
   station_dates:
-    - "2019-01-18"
+    - "2019-07-11"
 
   # 是否根据时间范围 和 乘车类型 购票
   # 否则将需要手动填写车次
@@ -30,15 +30,19 @@ set:
   # - "G1353"
   # - "G1329"
   station_trains:
-    - "G6153"
+    - "G582"
     - "G6184"
     - "G6173"
 
   # 出发城市，比如深圳北，就填深圳就搜得到
-  from_station: "邵阳"
+  from_stations:
+    - "余姚北"
+    - "绍兴北"
 
   # 到达城市 比如深圳北，就填深圳就搜得到
-  to_station: "深圳北"
+  to_stations:
+    - "杭州东"
+    - "余姚北"
 
   # 座位(list) 多个座位ex:
   # - "商务座"
@@ -96,8 +100,8 @@ auto_code_account:
 #  host: "smtp.qq.com"
 email_conf:
   is_email: True
-  email: "931128603@qq.com "
-  notice_email_list: "931128603@qq.com"
+  email: "1580354634@qq.com "
+  notice_email_list: "1580354634@qq.com"
   username: "931128603"
   password: ""
   host: "smtp.qq.com"
